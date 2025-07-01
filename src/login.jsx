@@ -10,7 +10,7 @@ function Login() {
     const handlesubmit = (e) => {
         e.preventDefault();
         console.log(email, password); 
-        axios.post("http://localhost:3001/login", { email, password })
+        axios.post(`${process.env.REACT_APP_API_URL}/register`, {name, email, password})
             .then((res) => {
                 console.log(res.data);
                 if (res.data.message === "Login successful") {
